@@ -1,25 +1,21 @@
-import React from 'react'
-import Create from './components/create'
-import './App.css'
-import Read from './components/read';
+import './App.css';
+import { Navbar, StudentData, EditUser, AllUsers, AddUsers, NotFound } from './components'
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+
 
 function App() {
-    return (
-        <div className='main'>
-            <div>
-                <h3>React List applications</h3>
-            </div>
-            <div>
-                <Create />
-            </div>
-            <div style={{margin: 20}}>
-                <Read />
-            </div>
-
-
-        </div>
-    );
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="*" element={< NotFound />} />
+        <Route exact path='/' element={< StudentData />}></Route>
+        <Route exact path='/all' element={< AllUsers />}></Route>
+        <Route exact path='/add' element={< AddUsers />}></Route>
+        <Route exact path='/edit/:id' element={< EditUser />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
-// https://621379ddf43692c9c6062695.mockapi.io/:endpoint
+export default App;
