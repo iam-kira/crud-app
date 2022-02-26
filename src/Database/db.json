@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name": "Vijay Biradar",
+            "email": "vijaybiradar@nieit.ac.in",
+            "usn": "4NN19CS032",
+            "id": 1
+        },
+        {
+            "name": "Vijay B",
+            "email": "4NN19CS032@nieit.ac.in",
+            "usn": "4NN19CS032",
+            "id": 2
+        }
+    ]
+}

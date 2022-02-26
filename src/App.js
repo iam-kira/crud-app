@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Create from './components/create'
+import './App.css'
+import Read from './components/read';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className='main'>
+            <div>
+                <h3>React List applications</h3>
+            </div>
+            <div>
+                <Create />
+            </div>
+            <div style={{margin: 20}}>
+                <Read />
+            </div>
+
+
+        </div>
+    );
 }
 
-export default App;
+export default App
+// https://621379ddf43692c9c6062695.mockapi.io/:endpoint
