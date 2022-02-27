@@ -69,15 +69,15 @@ const EditUser = () => {
         <FormGroup className={classes.form} >
             <Typography variant='h4' style={{ fontFamily: "monospace" }}> Edit Students</Typography>
             <FormControl >
-                <InputLabel >Name</InputLabel>
+                <InputLabel >Name </InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='name' value={name} />
             </FormControl>
             <FormControl>
-                <InputLabel >USN</InputLabel>
+                <InputLabel >USN </InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='usn' value={usn} />
             </FormControl>
             <FormControl>
-                <InputLabel >Branch</InputLabel>
+                <InputLabel >Branch </InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='branch' value={branch} />
             </FormControl>
             <FormControl>

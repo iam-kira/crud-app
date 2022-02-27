@@ -47,8 +47,8 @@ const AddUser = () => {
         console.log(user);
     }
 
-    const addUserDetails = async (user) => {
-        await addUser( user);
+    const addUserDetails = async (users) => {
+        await addUser( users);
         history.push('/all');
 
     }
@@ -72,7 +72,7 @@ const AddUser = () => {
                 <InputLabel>Email</InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='email' value={email} />
             </FormControl>
-            <Button variant="contained" onClick={() => addUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Add</Button>
+            <Button variant="contained" onClick={(e) => addUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Add</Button>
         </FormGroup>
     );
 }
