@@ -44,21 +44,21 @@ const useStyles = makeStyles({
 
 const AllUsers = () => {
     const classes = useStyles();
-    const [users, setUsers] = useState([]);
+    const [user, setUsers] = useState([]);
 
     useEffect(() => {
         getAllUsers();
     }, []);
 
-    const deleteUserData = async (id) => {
-        await deleteUser(id);
+    const deleteUserData = async (usn) => {
+        await deleteUser(usn);
         getAllUsers();
     }
 
     const getAllUsers = async () => {
         let response = await getUsers();
-        console.log(response.data);
-        setUsers(response.data);
+        console.log(response);
+        setUsers(response);
     }
     return (
         <div className={classes.bg}>
@@ -75,7 +75,7 @@ const AllUsers = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody >
-                    {users.map((user) => (
+                    {user && user.map((user) => (
                         <TableRow className={classes.row}>
                             <TableCell>{user.id}</TableCell>
                             <TableCell>{user.name}</TableCell>
@@ -83,8 +83,8 @@ const AllUsers = () => {
                             <TableCell>{user.branch}</TableCell>
                             <TableCell>{user.email}</TableCell>
                             <TableCell>
-                                <Button variant="contained" color="primary" style={{ marginRight: 10 }} component={Link} to={`/edit/${user.id}`}>Edit</Button>
-                                <Button variant="contained" color="secondary" onClick={() => deleteUserData(user.id)}>Delete</Button>
+                                <Button variant="contained" color="primary" style={{ marginRight: 10 }} component={Link} to={`/edit/${user.usn}`}>Edit</Button>
+                                <Button variant="contained" color="secondary" onClick={() => deleteUserData(user.usn)}>Delete</Button>
                             </TableCell>
 
                         </TableRow>

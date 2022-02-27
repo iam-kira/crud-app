@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 
 const EditUser = () => {
     const classes = useStyles();
-    const { id } = useParams();
+    // const { id } = useParams();
     let history = useNavigate();
     const [user, setUser] = useState(initialValues);
     const { name, usn, email, branch } = user;
@@ -51,8 +51,8 @@ const EditUser = () => {
     }, []);
 
     const loadUserData = async () => {
-        const response = await getUsers(id);
-        setUser(response.data);
+        const response = await getUsers(usn);
+        setUser(response);
     } 
 
 
@@ -63,7 +63,7 @@ const EditUser = () => {
 
     const editUserDetails = async () => {
         await editUser(user);
-        history.push('./all');
+        // history.push('./all');
     }
     return (
         <FormGroup className={classes.form} >
@@ -84,7 +84,7 @@ const EditUser = () => {
                 <InputLabel >Email</InputLabel>
                 <Input onChange={(e) => onValueChange(e)} name='email' value={email} />
             </FormControl>
-            <Button variant="contained" onClick={() => editUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Upload</Button>
+            <Button variant="contained" onClick={(e) => editUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Upload</Button>
         </FormGroup>
     );
 }

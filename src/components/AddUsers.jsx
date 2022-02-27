@@ -1,7 +1,8 @@
 import { FormControl, Input, Typography, FormGroup, InputLabel, Button, makeStyles } from "@material-ui/core";
 import { addUser } from "../Service/api";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 
 const useStyles = makeStyles({
     form: {
@@ -42,14 +43,14 @@ const AddUser = () => {
     let history = useNavigate();
 
     const onValueChange = (e) => {
-        console.log(e.target.value);
+        console.log(e.target.value)
         setUser({ ...user, [e.target.name]: e.target.value })
         console.log(user);
     }
 
-    const addUserDetails = async (users) => {
-        await addUser( users);
-        history.push('/all');
+    const addUserDetails = async () => {
+        await addUser(user);
+        // history.push('./all');
 
     }
 

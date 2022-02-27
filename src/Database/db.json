@@ -1,11 +1,11 @@
 {
-"users": [
+  "users": [
     {
-        "name": "Vijay Biradar",
-        "email": "vijaybiradar@nieit.ac.in",
-        "usn": "4NN19CS032",
-    "branch": "CSE",
-    "id": 1
+      "name": "Vijay Biradar",
+      "email": "vijaybiradar@nieit.ac.in",
+      "usn": "4NN19CS032",
+      "branch": "CSE",
+      "id": 1
     }
-]
+  ]
 }
