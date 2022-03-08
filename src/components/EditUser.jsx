@@ -53,7 +53,7 @@ const EditUser = () => {
     const loadUserData = async () => {
         const response = await getUsers(usn);
         setUser(response);
-    } 
+    }
 
 
     const onValueChange = (e) => {
@@ -63,29 +63,31 @@ const EditUser = () => {
 
     const editUserDetails = async () => {
         await editUser(user);
-        // history.push('./all');
+        history.push('./all');
     }
     return (
-        <FormGroup className={classes.form} >
-            <Typography variant='h4' style={{ fontFamily: "monospace" }}> Edit Students</Typography>
-            <FormControl >
-                <InputLabel >Name </InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='name' value={name} />
-            </FormControl>
-            <FormControl>
-                <InputLabel >USN </InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='usn' value={usn} />
-            </FormControl>
-            <FormControl>
-                <InputLabel >Branch </InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='branch' value={branch} />
-            </FormControl>
-            <FormControl>
-                <InputLabel >Email</InputLabel>
-                <Input onChange={(e) => onValueChange(e)} name='email' value={email} />
-            </FormControl>
-            <Button variant="contained" onClick={(e) => editUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Upload</Button>
-        </FormGroup>
-    );
+        
+            <FormGroup className={classes.form} >
+                <Typography variant='h4' style={{ fontFamily: "monospace" }}> Edit Students</Typography>
+                <FormControl >
+                    <InputLabel >Name </InputLabel>
+                    <Input onChange={(e) => onValueChange(e)} name='name' value={user.name} />
+                </FormControl>
+                <FormControl>
+                    <InputLabel >USN </InputLabel>
+                    <Input onChange={(e) => onValueChange(e)} name='usn' value={user.usn} />
+                </FormControl>
+                <FormControl>
+                    <InputLabel >Branch </InputLabel>
+                    <Input onChange={(e) => onValueChange(e)} name='branch' value={user.branch} />
+                </FormControl>
+                <FormControl>
+                    <InputLabel >Email</InputLabel>
+                    <Input onChange={(e) => onValueChange(e)} name='email' value={user.email} />
+                </FormControl>
+                <Button variant="contained" onClick={(e) => editUserDetails()} className={classes.button} style={{ borderRadius: 10, width: 50, margin: "20px 0 0 38%" }}>Upload</Button>
+            </FormGroup>
+        );
+
 }
 export default EditUser;

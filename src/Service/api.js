@@ -19,21 +19,21 @@ export const addUser = async (user) => {
     return users
 }
 
-export const editUser = async (usn, user) => {
+export const editUser = async (usn) => {
     // return await axios.put(`${url}/${usn}`, user)
     let users = window.localStorage.getItem("users")
     users = users && JSON.parse(users) || [];
-    users.push(user)
+    users.push(usn)
     window.localStorage.setItem("users", JSON.stringify(users))
     return users
 
 }
 
-export const deleteUser = async (usn) => {
+export const deleteUser = async (user) => {
     // return await axios.delete(`${url}/${usn}`)
     let users = window.localStorage.getItem("users")
     // users = users && JSON.parse(users) || [];
-    users.delete(usn)
+    users.delete(user)
     window.localStorage.setItem("users", JSON.stringify(users))
     return users
 }
